@@ -1,0 +1,30 @@
+.card-div {
+    margin: 1rem;
+}
+
+.card-body {
+    height: 35vh;
+}
+
+.card-title {
+    height: 3rem;
+    overflow: hidden;
+}
+
+.card-description {
+    height: 15vh;
+    overflow-x: hidden;
+}
+
+.card-price-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem;
+}
+
+.card-price-btn p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
