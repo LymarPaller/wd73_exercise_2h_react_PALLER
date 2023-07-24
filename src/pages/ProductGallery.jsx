@@ -21,26 +21,25 @@ function ProductGallery () {
 
     return (
         <>
-        <div>
-            <div>
-                <h1>Products</h1>
+        <div className="product-container container-fluid">
+            <div className="header-container">
+                <h1>Season 07 Available Cards</h1>
             </div>
-
-            <div>
-                <h3>Cart Items: <span className="fw-bold">{cartItemCount}</span></h3>
-            </div>
-            <div className="cards row">
-                {
-                    data.map(
-                        data => <ProductItem 
-                        // key={product.id}
-                        name={data.name}
-                        description={data.desc}
-                        thumbnail={data.card_images[0].image_url}
-                        price={data.card_prices[0].cardmarket_price}
-                        />
-                    )
-                }
+            <div className="cards-container">
+                <div className="cards">
+                    {
+                        data.map(
+                            data => <ProductItem 
+                            key={data.id}
+                            name={data.name}
+                            description={data.desc}
+                            thumbnail={data.card_images[0].image_url}
+                            price={data.card_prices[0].cardmarket_price}
+                            id={data.id}
+                            />
+                        )
+                    }
+                </div>
             </div>
         </div>
         </>

@@ -1,8 +1,14 @@
+import "./Home.css"
+
+
 function Home () {
     
     return (
         <>
-        <h1>Home</h1>
+        <div className="main-container">
+            <h1>Yu-Gi-Oh!</h1>
+            <p>Season 07</p>
+        </div>
         </>
     )
 }

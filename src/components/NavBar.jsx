@@ -1,16 +1,21 @@
 import { ShoppingCart } from "phosphor-react"
 import { Link } from "react-router-dom"
 import "./NavBar.css"
+import { useSelector } from "react-redux"
 
 function Navbar () {
+    const cartItemCount = useSelector((state) => state.cartItemCount)
     return(
         <>
         <div className="navbar">
             <div className="links">
                 <Link to="/">Home</Link>
                 <Link to="/product">Product Gallery</Link>
-                <Link to="/cart">
+                <Link to="/cart" className="cart">
                     <ShoppingCart size={35} />
+                    <div className="cart-items">
+                        <p>{cartItemCount}</p>
+                    </div>
                 </Link>
             </div>
         </div>

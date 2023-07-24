@@ -4,6 +4,8 @@
 
 .card-body {
     height: 35vh;
+    background-color: rgb(32, 32, 32);
+    border-radius: 10px;
 }
 
 .card-title {
@@ -27,4 +29,22 @@
 .card-price-btn p {
     font-size: 1.5rem;
     font-weight: bold;
+    margin-bottom: 0;
+}
+
+.card {
+    width: 20rem;
+}
+
+.card img {
+    padding: 1rem;
+}
+
+p {
+    color: white;
+}
+
+h5 {
+    color: white;
+    text-align: center;
 }

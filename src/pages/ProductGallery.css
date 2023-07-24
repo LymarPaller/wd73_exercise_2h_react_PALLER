@@ -1,7 +1,23 @@
+.product-container {
+    margin-top: 8rem;
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    color: white;
+}
+
+.cards-container {
+    margin-top: 3rem;
+}
+
 .cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: top;
-
+    margin-top: 3rem;
 }
