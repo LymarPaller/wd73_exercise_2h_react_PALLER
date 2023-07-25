@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import "./ProductItem.css"
+import "../css/ProductItem.css"
 import { addToCart } from "../store/cartItemCountReducer"
 import { addProductToCart } from "../store/cartReducer"
 

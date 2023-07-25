@@ -1,12 +1,13 @@
 import { useDispatch, useSelector } from "react-redux"
-import "./Checkout.css"
+import "../css/Checkout.css"
 
 function Checkout() {
     const cart = useSelector(state => state.cart)
 
     return (
-        <><div className="checkout-div">
-            <h3>Checkout</h3>
+        <>
+        <div className="checkout-div">
+            <h3 className="checkout-header">Checkout</h3>
             <div className="check-out-container">
                 {
                 cart.map(

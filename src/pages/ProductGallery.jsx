@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import ProductItem from "../components/ProductItem"
-import "./ProductGallery.css"
+import "../css/ProductGallery.css"
 import { useSelector } from "react-redux"
 
 function ProductGallery () {
@@ -21,7 +21,7 @@ function ProductGallery () {
 
     return (
         <>
-        <div className="product-container container-fluid">
+        <div className="product-container">
             <div className="header-container">
                 <h1>Season 07 Available Cards</h1>
             </div>

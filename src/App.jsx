@@ -5,7 +5,7 @@ import Navbar from "./components/NavBar"
 import Cart from "./pages/cart"
 import { Provider } from "react-redux"
 import { store } from "./store/store"
-import "./App.css"
+import "./css/App.css"
 
 
 function App() {
@@ -14,19 +14,18 @@ function App() {
     <>
     <Provider store={store}>
       <BrowserRouter>
-        <div className="navbar">
+        <div className="body-container">
           <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />}/>
+            <Route path="/product" element={
+              <>
+              <ProductGallery />
+              </>
+            }/>
+            <Route path="/cart" element={<Cart />}/>
+          </Routes>
         </div>
-        <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/product" element={
-            <>
-            <ProductGallery />
-            </>
-          }/>
-          <Route path="/cart" element={<Cart />}/>
-        </Routes>
-      
       </BrowserRouter>
     </Provider>
     </>
