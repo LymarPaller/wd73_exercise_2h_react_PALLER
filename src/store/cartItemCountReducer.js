@@ -8,8 +8,11 @@ export const cartItemCountSlice = createSlice({
     reducers: {
         addToCart: (state, action) => {
             return state + action.payload
+        },
+        decreaseCart: (state, action) => {
+            return state - action.payload
         }
     }
 })
 
-export const {addToCart} = cartItemCountSlice.actions
+export const {addToCart, decreaseCart} = cartItemCountSlice.actions

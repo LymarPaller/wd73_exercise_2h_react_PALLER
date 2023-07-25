@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import "../css/Checkout.css"
 import { removeProductFromCart } from "../store/cartReducer"
+import { decreaseCart } from "../store/cartItemCountReducer"
 
 function Checkout() {
     const cart = useSelector(state => state.cart)
@@ -8,6 +9,7 @@ function Checkout() {
 
     const handleRemoveButtonClick = (productId) => {
         dispatch(removeProductFromCart(productId))
+        dispatch(decreaseCart(1))
     }
 
     return (
