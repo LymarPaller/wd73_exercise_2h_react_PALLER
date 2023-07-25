@@ -23,7 +23,26 @@ import { createSlice } from "@reduxjs/toolkit";
 
             return newState
         },
+
+        // removeProductToCart: (state, action) => {
+        //     state.count -= 1
+        // },
+
+        removeProductFromCart: (state, action) => {
+            const productId = action.payload;
+            const itemIndex = state.findIndex(item => item.id === productId);
+      
+            if (itemIndex !== -1) {
+              const item = state[itemIndex];
+      
+              if (item.count > 1) {
+                state[itemIndex] = { ...item, count: item.count - 1 };
+              } else {
+                state.splice(itemIndex, 1);
+              }
+            }
+          },
     },
  })
 
- export const {addProductToCart} = cartSlice.actions
+ export const {addProductToCart, removeProductFromCart} = cartSlice.actions
