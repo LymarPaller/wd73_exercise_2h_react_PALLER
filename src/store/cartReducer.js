@@ -23,10 +23,26 @@ import { createSlice } from "@reduxjs/toolkit";
 
             return newState
         },
+        
+        addProductToCart10: (state, action) => {
+          const newState = [...state]
+          const product = action.payload
 
-        // removeProductToCart: (state, action) => {
-        //     state.count -= 1
-        // },
+          const duplicateIndex = newState.findIndex(item => item.id === product.id)
+
+          if (duplicateIndex === -1) {
+              product.count = 10
+              newState.push(product)
+          }
+          else {
+              newState[duplicateIndex] = {
+                  ...newState[duplicateIndex],
+                  count: newState[duplicateIndex].count + 10
+              }
+          }
+
+          return newState
+        },
 
         removeProductFromCart: (state, action) => {
             const productId = action.payload;
@@ -41,8 +57,23 @@ import { createSlice } from "@reduxjs/toolkit";
                 state.splice(itemIndex, 1);
               }
             }
-          },
+        },
+
+        removeAllProductFromCart: (state, action) => {
+          const productId = action.payload;
+          const itemIndex = state.findIndex(item => item.id === productId);
+    
+          if (itemIndex !== -1) {
+            const item = state[itemIndex];
+    
+            if (item.count > 1) {
+              state[itemIndex] = { ...item, count: 0 };
+            } else {
+              state.splice(itemIndex, 1);
+            }
+          }
+        },
     },
  })
 
- export const {addProductToCart, removeProductFromCart} = cartSlice.actions
+ export const {addProductToCart, removeProductFromCart, addProductToCart10, removeAllProductFromCart} = cartSlice.actions

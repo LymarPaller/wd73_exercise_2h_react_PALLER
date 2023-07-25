@@ -1,18 +1,27 @@
 import { useDispatch } from "react-redux"
 import "../css/ProductItem.css"
-import { addToCart } from "../store/cartItemCountReducer"
-import { addProductToCart } from "../store/cartReducer"
+import { addToCart, addToCart10 } from "../store/cartItemCountReducer"
+import { addProductToCart, addProductToCart10 } from "../store/cartReducer"
 
 function ProductItem (props) {
     const { name, description, thumbnail, price, id } = props
     const dispatch = useDispatch()
 
     function handleClick() {
-        dispatch(addToCart(1))
+        dispatch(addToCart())
         dispatch(addProductToCart({
             id,
             name,
             price
+        }))
+    }
+
+    function handleClick10() {
+        dispatch(addToCart10(10))
+        dispatch(addProductToCart10({
+            id,
+            name,
+            price,
         }))
     }
 
@@ -27,6 +36,7 @@ function ProductItem (props) {
                     <div className="card-price-btn">
                         <p className="card-text">${price}</p>
                         <button className="btn btn-primary" onClick={handleClick}>Add to Cart</button>
+                        <button className="btn btn-primary" onClick={handleClick10}>Add 10</button>
                     </div>
                 </div>
             </div>
