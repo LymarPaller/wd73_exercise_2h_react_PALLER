@@ -7,21 +7,13 @@ function ProductItem (props) {
     const { name, description, thumbnail, price, id } = props
     const dispatch = useDispatch()
 
-    function handleClick() {
-        dispatch(addToCart())
+    function handleClick(count) {
+        dispatch(addToCart(count))
         dispatch(addProductToCart({
             id,
             name,
-            price
-        }))
-    }
-
-    function handleClick10() {
-        dispatch(addToCart10(10))
-        dispatch(addProductToCart10({
-            id,
-            name,
             price,
+            count
         }))
     }
 
@@ -35,8 +27,8 @@ function ProductItem (props) {
                     <p className="card-text card-description">{description}</p>
                     <div className="card-price-btn">
                         <p className="card-text">${price}</p>
-                        <button className="btn btn-primary" onClick={handleClick}>Add to Cart</button>
-                        <button className="btn btn-primary" onClick={handleClick10}>Add 10</button>
+                        <button className="btn btn-primary" onClick={() => handleClick(1)}>Add to Cart</button>
+                        <button className="btn btn-primary" onClick={() => handleClick(10)}>Add 10</button>
                     </div>
                 </div>
             </div>
